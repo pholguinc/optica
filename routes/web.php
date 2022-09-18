@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Livewire\UserController;
+use App\Http\Livewire\Users;
 use Illuminate\Support\Facades\Route;
+use WPGraphQL\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +34,9 @@ Route::middleware([
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
 });
+
+
+//CRUDS
+
+Route::get('admin/usuarios', UserController::class);
+
