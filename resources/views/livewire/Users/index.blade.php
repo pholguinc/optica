@@ -9,7 +9,8 @@
                             <span class="font-weight-bold text-blue-400">Inicio</span>
                         </a>
                     </li>
-                    <li class="breadcrumb-item active">Lista de Usuarios</li>
+                    <li class="breadcrumb-item">Usuarios</li>
+                    <li class="breadcrumb-item active">Usuarios del Sistema</li>
                 </ol>
             </div>
             <div class="border-top">
@@ -42,26 +43,26 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Cod</th>
-                        <th>Nombres</th>
-                        <th>Estado</th>
-                        <th>Rol</th>
-                        <th>Acciones</th>
+                        <th rowspan="1" colspan="1">Cod</th>
+                        <th rowspan="1" colspan="1">Nombres</th>
+                        <th rowspan="1" colspan="1">Estado</th>
+                        <th rowspan="1" colspan="1">Rol</th>
+                        <th rowspan="1" colspan="1">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
                         <tr>
-                            <td>{{ $user->id }}</td>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $user->name }}</td>
-                            <td width="140px">
+                            <td width="135px">
                                 <button type="button" class="btn bg-danger-400 btn-md text-white">
                                     <span>Inactivo</span>
                                     <i class="fa fa-window-close ml-2"></i>
                                 </button>
                             </td>
-                            <td width="140px">Rol</td>
-                            <td width="175px" class="justify-center">
+                            <td>Rol</td>
+                            <td width="175px" class="text-center">
                                 <a href="" class="btn bg-info-400 btn-md text-white" data-toggle="tooltip" data-placement="top" title="Ver">
                                     <i class="fas fa-eye"></i>
                                 </a>
