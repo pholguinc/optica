@@ -17,9 +17,11 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Pedro Holguín',
+            'username' => 'pedrohc',
             'email' => 'holguinpedro90@gmail.com',
             'status' => 'Activo',
             'password' => bcrypt('12345'),
+            'phone' => '903023713'
             ]);
 
         User::factory(99)->create();

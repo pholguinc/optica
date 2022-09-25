@@ -43,8 +43,10 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
-                        <th rowspan="1" colspan="1">Cod</th>
+                        <th rowspan="1" colspan="1">#</th>
                         <th rowspan="1" colspan="1">Nombres</th>
+                        <th rowspan="1" colspan="1">Usuario</th>
+                        <th rowspan="1" colspan="1">Teléfono</th>
                         <th rowspan="1" colspan="1">Estado</th>
                         <th rowspan="1" colspan="1">Rol</th>
                         <th rowspan="1" colspan="1">Acciones</th>
@@ -53,8 +55,10 @@
                 <tbody>
                     @foreach ($users as $user)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td width="80px">{{ $loop->iteration }}</td>
                             <td>{{ $user->name }}</td>
+                            <td>{{ $user->username }}</td>
+                            <td>{{ $user->phone }}</td>
                             <td width="135px">
                                 <button type="button" class="btn bg-danger-400 btn-md text-white">
                                     <span>Inactivo</span>
@@ -82,14 +86,14 @@
         </div>
         <div class="mt-4 mr-4">
             <div class="d-flex float-left ml-4">
-                <button class="btn btn-md bg-success-400 text-white">
+                <button class="btn btn-md bg-success-400 text-white" wire:click="generateReport">
                     <i class="fas fa-file-excel"></i>
                     <span>Reportes Excel</span>
                 </button>
-                <button class="btn btn-md bg-danger-400 text-white ml-2">
+                <a class="btn btn-md bg-danger-400 text-white ml-2" href="{{ url('admin/reportes/usuarios/pdf') }}">
                     <i class="fas fa-file-pdf"></i>
                     <span>Reportes PDF</span>
-                </button>
+                </a>
                 <button class="btn btn-md bg-grey-400 text-white ml-2">
                     <i class="fas fa-print"></i>
                     <span>Imprimir</span>

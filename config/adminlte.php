@@ -302,86 +302,80 @@ return [
         ],
 
         // Sidebar items:
+
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Dashboard',
+            'url'  => 'admin',
+            'icon' => 'fas fa-fw fa-tachometer-alt mr-2',
+        ],
+
+        ['header' => 'Administración'],
+        [
+            'text' => 'Usuarios',
+            'url'  => 'admin/usuarios',
+            'icon' => 'fas fa-user-tie fa-fw mr-2',
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
+            'text' => 'Roles',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-user-cog fa-fw mr-2',
         ],
+
+        ['header' => 'POS'],
+
         [
-            'text' => 'change_password',
+            'text' => 'Cajas',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-cash-register fa-fw mr-2',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Clientes',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-users fa-fw mr-2',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Categorías',
+            'url'  => 'admin/categorias',
+            'icon' => 'fas fa-tags fa-fw mr-2',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Proveedores',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-shipping-fast fa-fw mr-2',
+        ],
+        [
+            'text' => 'Productos',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-boxes fa-fw mr-2',
+        ],
+        [
+            'text' => 'Compras',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-shopping-basket fa-fw mr-2',
+        ],
+        [
+            'text' => 'Ventas',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-hand-holding-usd fa-fw mr-2',
+        ],
+
+        [
+            'text' => 'Kardex',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-warehouse fa-fw mr-2',
+        ],
+
+        ['header' => 'Sistema'],
+
+        [
+            'text' => 'Empresa',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-store-alt fa-fw mr-2',
+        ],
+        [
+            'text' => 'Base de Datos',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-database fa-fw mr-2',
         ],
     ],
 

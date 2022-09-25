@@ -14,13 +14,13 @@ class UserFactory extends Factory
     {
         return [
 			'name' => $this->faker->name,
-			'email' => $this->faker->name,
-			'two_factor_secret' => $this->faker->name,
-			'two_factor_recovery_codes' => $this->faker->name,
-			'two_factor_confirmed_at' => $this->faker->name,
-			'status' => $this->faker->name,
-			'current_team_id' => $this->faker->name,
-			'profile_photo_path' => $this->faker->name,
+            'username' => $this->faker->userName(),
+			'status' => $this->faker->randomElement(['Activo', 'Inactivo']),
+			'email' => $this->faker->unique()->safeEmail(),
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'phone' => $this->faker->phoneNumber(),
+            'remember_token' => Str::random(10),
         ];
     }
 }
