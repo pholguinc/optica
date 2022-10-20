@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/pdf.css',
                 'resources/css/colors.css',
+                'resources/css/components.css',
                 'resources/js/app.js',
             ],
             refresh: [

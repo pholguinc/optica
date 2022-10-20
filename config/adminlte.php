@@ -329,9 +329,26 @@ return [
             'icon' => 'fas fa-cash-register fa-fw mr-2',
         ],
         [
-            'text' => 'Clientes',
-            'url'  => 'admin/settings',
+            'text' => 'Pacientes',
+            'route'  => 'admin.pacientes.index',
             'icon' => 'fas fa-users fa-fw mr-2',
+            'submenu' => [
+                [
+                    'text' => 'Lista de Pacientes',
+                    'route'  => 'admin.pacientes.index',
+                    'icon' => ''
+                ],
+                [
+                    'text' => 'Consultas',
+                    'url'  => 'menu/child2',
+                    'icon' => ''
+                ],
+                [
+                    'text' => 'Historia Clínica',
+                    'url'  => 'menu/child2',
+                    'icon' => ''
+                ],
+            ],
         ],
         [
             'text' => 'Categorías',

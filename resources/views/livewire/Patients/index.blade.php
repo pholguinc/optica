@@ -9,8 +9,7 @@
                             <span class="font-weight-bold text-blue-400">Inicio</span>
                         </a>
                     </li>
-                    <li class="breadcrumb-item">Usuarios</li>
-                    <li class="breadcrumb-item active">Usuarios del Sistema</li>
+                    <li class="breadcrumb-item active">Pacientes</li>
                 </ol>
             </div>
             <div class="border-top">
@@ -28,11 +27,11 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="float-sm-right" id="button-add">
+                            <div class="float-sm-right">
                                 <button class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal"
                                     data-target="#modalPurple">
                                     <i class="fas fa-user-plus mr-2"></i>
-                                    <span>Agregar Nuevo</span>
+                                    <span>Registrar Paciente</span>
                                 </button>
                             </div>
                         </div>
@@ -41,33 +40,28 @@
             </div>
         </div>
         <div class="card-body p-0">
-            @include('livewire.Users.data')
-            @include('livewire.Users.create')
-            @include('livewire.Users.edit')
-            @include('livewire.Users.view')
+            @include('livewire.Patients.create')
+            @include('livewire.Patients.view')
         </div>
-        @if ($users->count())
-            <div class="mt-4 mr-4">
-                <div class="d-flex float-left ml-4">
-                    <button class="btn btn-md bg-success-400 text-white" wire:click="generateReport">
-                        <i class="fas fa-file-excel"></i>
-                        <span>Reportes Excel</span>
-                    </button>
-                    <a class="btn btn-md bg-danger-400 text-white ml-2"
-                        href="{{ url('admin/reportes/usuarios/pdf') }}">
-                        <i class="fas fa-file-pdf"></i>
-                        <span>Reportes PDF</span>
-                    </a>
-                    <button class="btn btn-md bg-grey-400 text-white ml-2">
-                        <i class="fas fa-print"></i>
-                        <span>Imprimir</span>
-                    </button>
-                </div>
-                <div class="float-right">
-                    {{ $users->links() }}
-                </div>
+        <div class="mt-4 mr-4">
+            <div class="d-flex float-left ml-4">
+                <button class="btn btn-md bg-success-400 text-white" wire:click="generateReport">
+                    <i class="fas fa-file-excel"></i>
+                    <span>Reportes Excel</span>
+                </button>
+                <a class="btn btn-md bg-danger-400 text-white ml-2" href="#">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Reportes PDF</span>
+                </a>
+                <button class="btn btn-md bg-grey-400 text-white ml-2">
+                    <i class="fas fa-print"></i>
+                    <span>Imprimir</span>
+                </button>
             </div>
-        @endif
+            <div class="float-right">
+
+            </div>
+        </div>
     </div>
 </div>
 

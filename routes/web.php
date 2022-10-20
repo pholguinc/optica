@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReportController;
 use App\Http\Livewire\CategoryController;
 use App\Http\Livewire\EmployeeController;
+use App\Http\Livewire\PatientController;
+use App\Http\Livewire\RegisterPatientController;
 use App\Http\Livewire\UserController;
 use App\Http\Livewire\Users;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +45,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 Route::get('admin/usuarios', UserController::class);
 Route::get('admin/categorias', CategoryController::class);
+
+Route::get('admin/pacientes', PatientController::class)->name('admin.pacientes.index');
 
 
 //Reportes
