@@ -1,4 +1,4 @@
-<x-adminlte-modal id="modalPurple" title="Theme Purple" theme="purple" icon="fas fa-bolt" size='lg'>
+<x-adminlte-modal id="modalPurple" title="Registrar Nuevo Usuario" theme="blue-400" icon="fas fa-bolt" size='lg'>
     <div class="alert alert-info alert-styled-left text-blue-800 content-group">
         <span class="text-semibold">Estimado usuario</span>
         Los campos remarcados con <span class="text-danger"> * </span> son necesarios.
@@ -65,6 +65,28 @@
                         </div>
                         <input type="password" class="form-control" placeholder="Ingrese su contraseña">
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Celular <span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
+                        </div>
+                        <input type="number" class="form-control" placeholder="Ingrese su teléfono...">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Tipo de Documento <span class="text-danger">*</span></label>
+                    <select class="form-control select2 js-example-basic-single" style="width: 100%;">
+                        <option selected="selected">DNI</option>
+                        <option>C.E</option>
+                    </select>
                 </div>
             </div>
         </div>

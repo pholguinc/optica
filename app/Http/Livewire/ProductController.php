@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Category;
+use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class CategoryController extends Component
+class ProductController extends Component
 {
     use WithPagination;
 
@@ -17,7 +17,7 @@ class CategoryController extends Component
 
     public function render()
     {
-        $categories = Category::paginate(8);
-        return view('livewire.Categories.index', compact('categories'))->extends('adminlte::page');
+        $products = Product::paginate(8);
+        return view('livewire.Products.index', compact('products'))->extends('adminlte::page');
     }
 }

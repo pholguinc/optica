@@ -9,7 +9,7 @@
                             <span class="font-weight-bold text-blue-400">Inicio</span>
                         </a>
                     </li>
-                    <li class="breadcrumb-item active">Categorías</li>
+                    <li class="breadcrumb-item active">Productos</li>
                 </ol>
             </div>
             <div class="border-top">
@@ -29,7 +29,7 @@
                         <div class="col-sm-6">
                             <div class="float-sm-right" id="button-add">
                                 <button class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal"
-                                    data-target="#modalCategory">
+                                    data-target="#modalProduct">
                                     <i class="fas fa-user-plus mr-2"></i>
                                     <span>Agregar Nuevo</span>
                                 </button>
@@ -41,10 +41,10 @@
         </div>
         <div class="card-body p-0">
             <!--modales-->
-            @include('livewire.Categories.view')
-            @include('livewire.Categories.create')
+            @include('livewire.Products.view');
+            @include('livewire.Products.create');
         </div>
-        @if ($categories->count())
+        @if ($products->count())
             <div class="mt-4 mr-4">
                 <div class="d-flex float-left ml-4">
                     <button class="btn btn-md bg-success-400 text-white" wire:click="generateReport">
@@ -62,7 +62,7 @@
                     </button>
                 </div>
                 <div class="float-right">
-                    {{ $categories->links() }}
+                    {{ $products->links() }}
                 </div>
             </div>
         @endif
