@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReportController;
+use App\Http\Livewire\CashRegisterController;
 use App\Http\Livewire\CategoryController;
 use App\Http\Livewire\DashboardController;
 use App\Http\Livewire\EmployeeController;
@@ -54,6 +55,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::get('admin', DashboardController::class)->name('admin.index');
 Route::get('admin/usuarios', UserController::class)->name('admin.users.index');
 Route::get('admin/roles', RoleController::class)->name('admin.roles.index');
+Route::get('admin/caja', CashRegisterController::class)->name('admim.cashregister.index');
 Route::get('admin/categorias', CategoryController::class)->name('admin.categories.index');
 Route::get('admin/pacientes', PatientController::class)->name('admin.patients.index');
 Route::get('admin/pacientes/consultas', QueryController::class)->name('admin.patients.queries');

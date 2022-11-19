@@ -325,7 +325,7 @@ return [
 
         [
             'text' => 'Cajas',
-            'url'  => 'admin/settings',
+            'route'  => 'admim.cashregister.index',
             'icon' => 'fas fa-cash-register fa-fw mr-2',
         ],
         [
