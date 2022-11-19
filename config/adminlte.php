@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Asesoría Optica D&R',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>sesoría Optica D&R</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -305,7 +305,7 @@ return [
 
         [
             'text' => 'Dashboard',
-            'url'  => 'admin',
+            'route'  => 'admin.index',
             'icon' => 'fas fa-fw fa-tachometer-alt mr-2',
         ],
 
@@ -317,7 +317,7 @@ return [
         ],
         [
             'text' => 'Roles',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/roles',
             'icon' => 'fas fa-user-cog fa-fw mr-2',
         ],
 
@@ -330,55 +330,49 @@ return [
         ],
         [
             'text' => 'Pacientes',
-            'route'  => 'admin.pacientes.index',
             'icon' => 'fas fa-users fa-fw mr-2',
             'submenu' => [
                 [
                     'text' => 'Lista de Pacientes',
-                    'route'  => 'admin.pacientes.index',
+                    'route'  => 'admin.patients.index',
                     'icon' => ''
                 ],
                 [
                     'text' => 'Consultas',
-                    'url'  => 'menu/child2',
-                    'icon' => ''
-                ],
-                [
-                    'text' => 'Historia Clínica',
-                    'url'  => 'menu/child2',
+                    'route'  => 'admin.patients.queries',
                     'icon' => ''
                 ],
             ],
         ],
         [
             'text' => 'Categorías',
-            'url'  => 'admin/categorias',
+            'route'  => 'admin.categories.index',
             'icon' => 'fas fa-tags fa-fw mr-2',
         ],
         [
             'text' => 'Proveedores',
-            'url'  => 'admin/settings',
+            'route'  => 'admin.providers.index',
             'icon' => 'fas fa-shipping-fast fa-fw mr-2',
         ],
         [
             'text' => 'Productos',
-            'url'  => 'admin/settings',
+            'route'  => 'admin.products.index',
             'icon' => 'fas fa-boxes fa-fw mr-2',
         ],
         [
             'text' => 'Compras',
-            'url'  => 'admin/settings',
+            'route'  => 'admin.shopping.index',
             'icon' => 'fas fa-shopping-basket fa-fw mr-2',
         ],
         [
             'text' => 'Ventas',
-            'url'  => 'admin/settings',
+            'route'  => 'admin.sales.index',
             'icon' => 'fas fa-hand-holding-usd fa-fw mr-2',
         ],
 
         [
             'text' => 'Kardex',
-            'url'  => 'admin/settings',
+            'route'  => 'admin.kardex.index',
             'icon' => 'fas fa-warehouse fa-fw mr-2',
         ],
 

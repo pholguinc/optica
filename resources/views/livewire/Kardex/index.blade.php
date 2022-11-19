@@ -9,14 +9,14 @@
                             <span class="font-weight-bold text-blue-400">Inicio</span>
                         </a>
                     </li>
-                    <li class="breadcrumb-item">Usuarios</li>
-                    <li class="breadcrumb-item active">Usuarios del Sistema</li>
+                    <li class="breadcrumb-item ">Pacientes</li>
+                    <li class="breadcrumb-item active">Consultas</li>
                 </ol>
             </div>
             <div class="border-top">
                 <div class="container-fluid">
                     <div class="row mb-3 mt-3 p-2">
-                        <div class="col-sm-6">
+                        <div class="col-md-12">
 
                             <div class="input-group">
                                 <input class="form-control py-2 border-right-0 border" type="search" placeholder="Escriba para filtrar" wire:model="search">
@@ -26,25 +26,22 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="float-sm-right" id="button-add">
-                                <button class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal" data-target="#modalPurple">
-                                    <i class="fas fa-user-plus mr-2"></i>
-                                    <span>Agregar Nuevo</span>
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="card-body p-0">
-            @include('livewire.Users.data')
-            @include('livewire.Users.create')
-            @include('livewire.Users.edit')
-            @include('livewire.Users.view')
+
+            @include('livewire.Kardex.view')
+
+        </div>
+        <div class="mr-3">
+            <div class="float-right">
+
+            </div>
         </div>
     </div>
+
 </div>
 
 
@@ -140,3 +137,4 @@
 
 </script>
 @endsection
+

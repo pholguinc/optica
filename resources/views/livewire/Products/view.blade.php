@@ -1,5 +1,5 @@
 <table class="table table-bordered table-striped table-hover">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th rowspan="1" colspan="1">#</th>
             <th rowspan="1" colspan="1">Nombre</th>

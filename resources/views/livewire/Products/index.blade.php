@@ -18,8 +18,7 @@
                         <div class="col-sm-6">
 
                             <div class="input-group">
-                                <input class="form-control py-2 border-right-0 border" type="search"
-                                    placeholder="Escriba para filtrar" wire:model="search">
+                                <input class="form-control py-2 border-right-0 border" type="search" placeholder="Escriba para filtrar" wire:model="search">
                                 <span class="input-group-append">
                                     <div class="input-group-text bg-transparent"><i class="fa fa-search"></i>
                                     </div>
@@ -28,8 +27,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="float-sm-right" id="button-add">
-                                <button class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal"
-                                    data-target="#modalProduct">
+                                <button class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal" data-target="#modalProduct">
                                     <i class="fas fa-user-plus mr-2"></i>
                                     <span>Agregar Nuevo</span>
                                 </button>
@@ -41,62 +39,49 @@
         </div>
         <div class="card-body p-0">
             <!--modales-->
-            @include('livewire.Products.view');
-            @include('livewire.Products.create');
+            @include('livewire.Products.view')
+            @include('livewire.Products.create')
         </div>
-        @if ($products->count())
-            <div class="mt-4 mr-4">
-                <div class="d-flex float-left ml-4">
-                    <button class="btn btn-md bg-success-400 text-white" wire:click="generateReport">
-                        <i class="fas fa-file-excel"></i>
-                        <span>Reportes Excel</span>
-                    </button>
-                    <a class="btn btn-md bg-danger-400 text-white ml-2"
-                        href="{{ url('admin/reportes/usuarios/pdf') }}">
-                        <i class="fas fa-file-pdf"></i>
-                        <span>Reportes PDF</span>
-                    </a>
-                    <button class="btn btn-md bg-grey-400 text-white ml-2">
-                        <i class="fas fa-print"></i>
-                        <span>Imprimir</span>
-                    </button>
-                </div>
-                <div class="float-right">
-                    {{ $products->links() }}
-                </div>
-            </div>
-        @endif
+
     </div>
 </div>
 
 
 
 @section('css')
-    @vite('resources/css/colors.css')
-    @vite('resources/css/components.css')
+@vite('resources/css/colors.css')
+@vite('resources/css/components.css')
 
-    <style>
-        @media (max-width: 575.98px) {
-            #button-add {
-                display: grid;
-                margin-top: 10px;
-            }
+<style>
+    @media (max-width: 575.98px) {
+        #button-add {
+            display: grid;
+            margin-top: 10px;
         }
+    }
 
-        .tooltip {
-            top: 0;
+    .tooltip {
+        top: 0;
+    }
+
+    @media (min-width: 576px) {
+        .modal-dialog {
+            margin: 1.75rem 7rem 1.75rem auto;
         }
-    </style>
+    }
+
+</style>
 @endsection
 
 @section('footer')
-    @include('components.footer')
+@include('components.footer')
 @endsection
 
 @section('js')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+</script>
 @endsection

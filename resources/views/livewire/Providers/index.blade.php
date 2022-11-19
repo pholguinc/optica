@@ -9,8 +9,7 @@
                             <span class="font-weight-bold text-blue-400">Inicio</span>
                         </a>
                     </li>
-                    <li class="breadcrumb-item">Usuarios</li>
-                    <li class="breadcrumb-item active">Usuarios del Sistema</li>
+                    <li class="breadcrumb-item active">Proveedores</li>
                 </ol>
             </div>
             <div class="border-top">
@@ -39,10 +38,12 @@
             </div>
         </div>
         <div class="card-body p-0">
-            @include('livewire.Users.data')
-            @include('livewire.Users.create')
-            @include('livewire.Users.edit')
-            @include('livewire.Users.view')
+            @include('livewire.Providers.view')
+        </div>
+        <div class="mr-3">
+            <div class="float-right">
+                {{ $providers->links() }}
+            </div>
         </div>
     </div>
 </div>
@@ -84,7 +85,7 @@
 
     /*responsive*/
 
-    @media(max-width: 700px) {
+    @media(max-width: 800px) {
         .table thead {
             display: none;
         }
@@ -124,6 +125,7 @@
             margin: 1.75rem 7rem 1.75rem auto;
         }
     }
+
 
 </style>
 @endsection
