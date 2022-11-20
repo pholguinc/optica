@@ -40,6 +40,14 @@
         <div class="card-body p-0">
             @include('livewire.Roles.view')
             @include('livewire.Roles.create')
+            @include('livewire.Roles.update')
+
+        </div>
+
+        <div class="mr-3">
+            <div class="float-right">
+                {{ $roles->links() }}
+            </div>
         </div>
     </div>
 </div>
@@ -57,10 +65,46 @@
 @endsection
 
 @section('js')
-<script type="text/javascript">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
     $(document).ready(function() {
-        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-bs-toggle="tooltip"]').tooltip();
+        Livewire.on('alert', function($message) {
+            Swal.fire(
+                '¡Correcto!'
+                , $message
+                , 'success'
+            , )
+        });
+
+        Livewire.on('render', () => {
+            $('#modalRole').modal('hide');
+            $('#EditRole').modal('hide');
+        });
+
+        Livewire.on('deleteRole', RoleId => {
+            Swal.fire({
+                title: '¿Está seguro de querer eliminarlo?',
+                text: "¡Al eliminarlo no hay opción a recuperarlo!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, quiero eliminarlo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.emit('delete', RoleId);
+                    Swal.fire(
+                        'Eliminado!'
+                        , '¡¡Tu registro fue eliminado con éxito!!'
+                        , 'success'
+                    )
+                }
+            })
+        })
+
     });
 
 </script>
 @endsection
+

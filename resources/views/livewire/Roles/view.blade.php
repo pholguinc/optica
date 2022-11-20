@@ -9,23 +9,28 @@
         </thead>
         <tbody>
 
+            @if($roles->count())
             @foreach($roles as $role)
-                <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $role->name }}</td>
-                    <td data-title="Acciones" width="175px" class="text-center">
+            <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $role->name }}</td>
+                <td data-title="Acciones" width="175px" class="text-center">
 
-                        <a href="" class="btn bg-blue-400 btn-md text-white" data-toggle="tooltip"
-                            data-placement="top" title="Editar" wire:click="EditRole({{ $role->id }})">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <a href="" class="btn bg-danger-400 btn-md text-white" data-toggle="tooltip"
-                            data-placement="top" title="Eliminar" onclick="Confirm('{{ $role->id }}')">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
+                    <a wire:click="Edit({{ $role->id }})" class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal" data-target="#EditRole">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a wire:click="$emit('deleteRole', {{ $role->id }})" class="btn bg-danger-400 btn-md text-white">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
             @endforeach
+            @else
+                <tr class="odd text-center">
+                    <td valign="top" colspan="3" class="dataTables_empty">No existe ningún
+                        registro con su búsqueda</td>
+                </tr>
+            @endif
 
         </tbody>
 
