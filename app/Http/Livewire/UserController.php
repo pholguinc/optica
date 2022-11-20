@@ -10,7 +10,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Maatwebsite\Excel\Facades\Excel;
-
+use Spatie\Permission\Models\Role;
 class UserController extends Component
 {
     use WithPagination;
@@ -22,8 +22,9 @@ class UserController extends Component
 
     public function render()
     {
+        $roles = Role::all();
         $users = User::paginate(8);
-        return view('livewire.Users.index', compact('users'))
+        return view('livewire.Users.index', compact('users','roles'))
         ->extends('adminlte::page');
     }
 
@@ -36,5 +37,7 @@ class UserController extends Component
         $pdf = PDF::loadView('Admin.Reports.users', compact('users'));
         return $pdf->setPaper('a4', 'landscape')->stream('reporteusuarios.pdf');
     }
+
+
 
 }

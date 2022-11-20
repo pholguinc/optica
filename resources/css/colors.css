@@ -89,6 +89,17 @@
     border-color: #1e88e5;
     color: #fff;
 }
+
+.btn-outline-blue {
+    color: #007bff;
+    border-color: #1e88e5;
+}
+
+.btn-outline-blue:hover {
+    color: #fff;
+    background-color: #1e88e5;
+}
+
 .bg-primary-700 {
     background-color: #1976d2;
     border-color: #1976d2;

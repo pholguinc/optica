@@ -25,7 +25,13 @@
                                 <i class="fa fa-window-close ml-2"></i>
                             </button>
                         </td>
-                        <td data-title="Rol">Rol</td>
+                        <td data-title="Rol">
+                            @if(!empty($user->getRoleNames()))
+                                @foreach($user->getRoleNames() as $rolName)
+                                    <span>{{ $rolName }}</span>
+                                @endforeach
+                            @endif
+                        </td>
                         <td id="actions" data-title="Acciones" width="175px" class="text-center">
                             <a href="" class="btn bg-info-400 btn-md text-white" data-toggle="tooltip"
                                 data-placement="top" title="Ver">
