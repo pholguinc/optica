@@ -65,8 +65,6 @@ Route::get('admin/compras', ShoppingController::class)->name('admin.shopping.ind
 Route::get('admin/ventas', SaleController::class)->name('admin.sales.index');
 Route::get('admin/kardex', KardexController::class)->name('admin.kardex.index');
 
-
-
 //Reportes
 Route::get('admin/reportes/usuarios/pdf', [UserController::class, 'generatePDF']);
 

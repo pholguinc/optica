@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('barcode');
             $table->string('description');
             $table->bigInteger('stock');
-            $table->enum('status', ['Activo', 'Inactivo'])->default('Inactivo');
             $table->timestamps();
         });
     }

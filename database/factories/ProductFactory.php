@@ -21,7 +21,6 @@ class ProductFactory extends Factory
             'barcode'=> $this->faker->numberBetween(0,8),
             'description' => $this->faker->text(45),
             'stock' => $this->faker->numberBetween(0,99),
-			'status' => $this->faker->randomElement(['Activo', 'Inactivo'])
         ];
     }
 }

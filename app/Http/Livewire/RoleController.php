@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Dotenv\Util\Str;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Spatie\Permission\Models\Permission;
@@ -47,9 +48,9 @@ class RoleController extends Component
 
         $rules = ['roleName' => 'required|min:2|unique:roles,name'];
         $messages = [
-            'roleName.required' => 'El nombre del role es requerido',
+            'roleName.required' => 'El nombre del rol es requerido',
             'roleName.min' => 'El nombre del rol debe tener al menos 2 caracteres',
-            'roleName.unique' => 'El role ya existe',
+            'roleName.unique' => 'El rol ya existe',
 
         ];
 
@@ -58,7 +59,7 @@ class RoleController extends Component
 
         Role::create(['name' => $this->roleName]);
         $this->emit('render');
-        $this->emit('alert', '¡La categoría se creó correctamente!');
+        $this->emit('alert', '¡El rol se creó correctamente!');
         $this->resetUI();
     }
 
@@ -77,27 +78,29 @@ class RoleController extends Component
     }
 
 
-    public function updateRole(Role $role){
+    public function updateRole(Role $role)
+    {
 
         $rules = ['roleName' => "required|min:2|unique:roles,name, {$this->id}"];
         $messages = [
             'roleName.required' => 'El nombre del role es requerido',
             'roleName.min' => 'El nombre del rol debe tener al menos 2 caracteres',
-            'roleName.unique' => 'El role ya existe',
+            'roleName.unique' => 'El rol ya existe',
 
         ];
 
         $this->validate($rules, $messages);
         $role->name = $this->roleName;
-        $role->save();
+        $role->update();
         $this->emit('render');
-        $this->emit('alert', '¡La categoría se actualizó correctamente!');
+        $this->emit('alert', '¡El rol se actualizó correctamente!');
         $this->resetUI();
-
     }
 
     public function delete(Role $role)
     {
         $role->delete();
     }
+
+
 }

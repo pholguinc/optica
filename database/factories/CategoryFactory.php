@@ -18,8 +18,7 @@ class CategoryFactory extends Factory
     {
         return [
 			'name' => $this->faker->text(10),
-            'description' => $this->faker->text(45),
-			'status' => $this->faker->randomElement(['Activo', 'Inactivo'])
+            'description' => $this->faker->text(45)
         ];
     }
 }

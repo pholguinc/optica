@@ -43,60 +43,43 @@
             <!--modales-->
             @include('livewire.Categories.view')
             @include('livewire.Categories.create')
+            @include('livewire.Categories.update')
         </div>
-        @if ($categories->count())
-            <div class="mt-4 mr-4">
-                <div class="d-flex float-left ml-4">
-                    <button class="btn btn-md bg-success-400 text-white" wire:click="generateReport">
-                        <i class="fas fa-file-excel"></i>
-                        <span>Reportes Excel</span>
-                    </button>
-                    <a class="btn btn-md bg-danger-400 text-white ml-2"
-                        href="{{ url('admin/reportes/usuarios/pdf') }}">
-                        <i class="fas fa-file-pdf"></i>
-                        <span>Reportes PDF</span>
-                    </a>
-                    <button class="btn btn-md bg-grey-400 text-white ml-2">
-                        <i class="fas fa-print"></i>
-                        <span>Imprimir</span>
-                    </button>
-                </div>
-                <div class="float-right">
-                    {{ $categories->links() }}
-                </div>
+        <div class="mt-4 mr-4">
+            <div class="float-right">
+                {{ $categories->links() }}
             </div>
-        @endif
+
+        </div>
     </div>
 </div>
 
 
 
 @section('css')
-    @vite('resources/css/colors.css')
-    @vite('resources/css/components.css')
+@vite('resources/css/colors.css')
+@vite('resources/css/components.css')
 
-    <style>
-        @media (max-width: 575.98px) {
-            #button-add {
-                display: grid;
-                margin-top: 10px;
-            }
-        }
-
-        .tooltip {
-            top: 0;
-        }
-    </style>
 @endsection
 
 @section('footer')
-    @include('components.footer')
+@include('components.footer')
 @endsection
 
 @section('js')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $(document).ready(function() {
+        $('[data-bs-toggle="tooltip"]').tooltip();
+        Livewire.on('alert', function($message) {
+            Swal.fire(
+                '¡Correcto!'
+                , $message
+                , 'success'
+            , )
         });
-    </script>
+
+    });
+
+</script>
 @endsection

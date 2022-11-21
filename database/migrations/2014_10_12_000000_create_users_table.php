@@ -16,13 +16,14 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('username')->unique();
+            $table->string('lastname');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->enum('status', ['Activo', 'Inactivo'])->default('Inactivo');
-            $table->string('phone')->unique();
+            $table->enum('status', ['Activo', 'Inactivo'])->default('Activo');
+            $table->string('phone');
+            $table->string('dni');
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();

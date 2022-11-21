@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="float-sm-right" id="button-add">
-                                <button class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal" data-target="#modalPurple">
+                                <button class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal" data-target="#modalUser">
                                     <i class="fas fa-user-plus mr-2"></i>
                                     <span>Agregar Nuevo</span>
                                 </button>
@@ -43,6 +43,7 @@
             @include('livewire.Users.create')
             @include('livewire.Users.edit')
             @include('livewire.Users.view')
+            @include('livewire.Users.permissions')
         </div>
     </div>
 </div>
@@ -119,11 +120,7 @@
         }
     }
 
-    @media (min-width: 576px) {
-        .modal-dialog {
-            margin: 1.75rem 7rem 1.75rem auto;
-        }
-    }
+
 
 </style>
 @endsection

@@ -1,10 +1,10 @@
 <table class="table table-bordered table-striped table-hover">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th rowspan="1" colspan="1">#</th>
             <th rowspan="1" colspan="1">Nombres</th>
             <th rowspan="1" colspan="1">Descripción</th>
-            <th rowspan="1" colspan="1">Estado</th>
+            <th rowspan="1" colspan="1">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -14,23 +14,11 @@
                     <td width="80px">{{ $loop->iteration }}</td>
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->description }}</td>
-                    <td width="135px">
-                        <button type="button" class="btn bg-danger-400 btn-md text-white">
-                            <span>Inactivo</span>
-                            <i class="fa fa-window-close ml-2"></i>
-                        </button>
-                    </td>
                     <td width="175px" class="text-center">
-                        <a href="" class="btn bg-info-400 btn-md text-white" data-toggle="tooltip"
-                            data-placement="top" title="Ver">
-                            <i class="fas fa-eye"></i>
-                        </a>
-                        <a href="" class="btn bg-blue-400 btn-md text-white" data-toggle="tooltip"
-                            data-placement="top" title="Editar">
+                        <a wire:click="Edit({{ $category->id }})" class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal" data-target="#EditCategory">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="" class="btn bg-danger-400 btn-md text-white" data-toggle="tooltip"
-                            data-placement="top" title="Eliminar">
+                        <a wire:click="$emit('deleteCategory', {{ $category->id }})" class="btn bg-danger-400 btn-md text-white">
                             <i class="fas fa-trash"></i>
                         </a>
                     </td>
