@@ -1,12 +1,13 @@
 <table class="table table-bordered table-striped table-hover">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th rowspan="1" colspan="1">#</th>
             <th rowspan="1" colspan="1">Nombres</th>
-            <th rowspan="1" colspan="1">Apellidos Paterno</th>
-            <th rowspan="1" colspan="1">Apellidos Materno</th>
-            <th rowspan="1" colspan="1">Sexo</th>
+            <th rowspan="1" colspan="1">Apellidos</th>
             <th rowspan="1" colspan="1">Teléfono</th>
+            <th rowspan="1" colspan="1">E-mail</th>
+            <th rowspan="1" colspan="1">DNI</th>
+            <th rowspan="1" colspan="1">Fecha de Nacimiento</th>
             <th rowspan="1" colspan="1">Dirección</th>
             <th rowspan="1" colspan="1">Acciones</th>
         </tr>
@@ -17,18 +18,13 @@
                 <tr>
                     <td width="80px">{{ $loop->iteration }}</td>
                     <td>{{ $patient->name }}</td>
-                    <td>{{ $patient->lastname_father}}</td>
-                    <td>{{ $patient->lastname_mother  }}</td>
-                    <td>
-                        {{ $patient->sex }}
-                    </td>
+                    <td>{{ $patient->lastname}}</td>
                     <td>{{ $patient->phone }}</td>
+                    <td>{{ $patient->email }}</td>
+                    <td>{{ $patient->dni }}</td>
+                    <td>{{ $patient->date }}</td>
                     <td>{{ $patient->address }}</td>
                     <td width="175px" class="text-center">
-                        <a href="" class="btn bg-info-400 btn-md text-white" data-toggle="tooltip"
-                            data-placement="top" title="Ver">
-                            <i class="fas fa-eye"></i>
-                        </a>
                         <a href="" class="btn bg-blue-400 btn-md text-white" data-toggle="tooltip"
                             data-placement="top" title="Editar">
                             <i class="fas fa-edit"></i>

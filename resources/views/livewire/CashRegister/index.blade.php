@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <div class="col-md-7 p-4">
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart" style="min-height: 420px; height: 400px; max-height: 420px; max-width: 100%;"></canvas>
                 </div>
             </div>
         </div>

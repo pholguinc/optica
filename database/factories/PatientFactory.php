@@ -18,11 +18,10 @@ class PatientFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'lastname_father' => $this->faker->userName(),
-            'lastname_mother' => $this->faker->userName(),
-            'sex' => $this->faker->randomElement(['Hombre', 'Mujer']),
+            'lastname' => $this->faker->userName(),
 			'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
+            'dni' => $this->faker->randomNumber(8,true),
             'address' => $this->faker->address(),
             'date' => $this->faker->date()
         ];

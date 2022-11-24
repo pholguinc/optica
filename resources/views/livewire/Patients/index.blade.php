@@ -44,22 +44,9 @@
             @include('livewire.Patients.view')
         </div>
         <div class="mt-4 mr-4">
-            <div class="d-flex float-left ml-4">
-                <button class="btn btn-md bg-success-400 text-white" wire:click="generateReport">
-                    <i class="fas fa-file-excel"></i>
-                    <span>Reportes Excel</span>
-                </button>
-                <a class="btn btn-md bg-danger-400 text-white ml-2" href="#">
-                    <i class="fas fa-file-pdf"></i>
-                    <span>Reportes PDF</span>
-                </a>
-                <button class="btn btn-md bg-grey-400 text-white ml-2">
-                    <i class="fas fa-print"></i>
-                    <span>Imprimir</span>
-                </button>
-            </div>
-            <div class="float-right">
 
+            <div class="float-right">
+                {{ $patients->links() }}
             </div>
         </div>
     </div>
