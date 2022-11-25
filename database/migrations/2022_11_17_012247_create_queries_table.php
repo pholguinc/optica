@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('queries', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('code')->unique();
             $table->string('description');
             $table->enum('status', ['Activo', 'Inactivo'])->default('Inactivo');
 
@@ -41,7 +41,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->unsignedBigInteger('patient_id');
-            $table->foreign('patient_id')->references('id')->on('patients');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
 
             $table->timestamps();
         });

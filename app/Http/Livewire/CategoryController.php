@@ -19,6 +19,7 @@ class CategoryController extends Component
         return 'vendor.livewire.bootstrap';
     }
 
+
     public function mount(Category $category)
     {
         $this->category = $category;

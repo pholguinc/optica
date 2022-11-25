@@ -24,22 +24,21 @@
                     <td>{{ $patient->dni }}</td>
                     <td>{{ $patient->date }}</td>
                     <td>{{ $patient->address }}</td>
-                    <td width="175px" class="text-center">
-                        <a href="" class="btn bg-blue-400 btn-md text-white" data-toggle="tooltip"
-                            data-placement="top" title="Editar">
+                    <td data-title="Acciones" width="175px" class="text-center">
+
+                        <a wire:click="Edit({{ $patient->id }})" class="rounded btn bg-primary-400 btn-md" label="Open Modal" data-toggle="modal" data-target="#EditPatient">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="" class="btn bg-danger-400 btn-md text-white" data-toggle="tooltip"
-                            data-placement="top" title="Eliminar">
+                        <a wire:click="$emit('deletePatient', {{ $patient->id }})" class="text-white btn bg-danger-400 btn-md">
                             <i class="fas fa-trash"></i>
                         </a>
                     </td>
                 </tr>
             @endforeach
         @else
-        <tr>
-            <td colspan="10" class="text-center font-weight-bold">No hay registros con su búsqueda</td>
-        </tr>
+            <tr>
+                <td colspan="1" class="text-center font-weight-bold">No hay registros con su búsqueda</td>
+            </tr>
         @endif
     </tbody>
 

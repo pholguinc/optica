@@ -1,4 +1,4 @@
-<x-adminlte-modal wire:ignore.self id="modalPatients" title="Registrar Nuevo Paciente" theme="blue-400" icon="fas fa-bolt" size='lg'>
+<x-adminlte-modal wire:ignore.self id="EditPatient" title="Registrar Nuevo Paciente" theme="blue-400" icon="fas fa-bolt" size='lg'>
     <div class="text-blue-800 alert alert-info alert-styled-left content-group">
         <span class="text-semibold">Estimado usuario</span>
         Los campos remarcados con <span class="text-danger"> * </span> son necesarios.
@@ -131,14 +131,14 @@
     </form>
     <x-slot name="footerSlot">
 
-        <button wire:click="CreatePatient()" wire:loading.attr="disabled" class="btn btn-md btn-outline-blue">
+        <button wire:click="UpdatePatient()" wire:loading.attr="disabled" class="btn btn-md btn-outline-blue">
             <div wire:loading>
                 <span class="spinner-border spinner-border-sm"></span>
                 Cargando...
             </div>
             <span wire:loading.remove>
                 <i class="mr-1 fas fa-save"></i>
-                Guardar
+                Actualizar
             </span>
         </button>
         <button class="btn btn-md btn-default" data-dismiss="modal" wire:click.prevent="resetUI()">

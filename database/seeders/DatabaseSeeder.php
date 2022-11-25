@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         Category::factory(10)->create();
         Product::factory(10)->create();
         Patient::factory(100)->create();
-        Query::factory(100)->create();
+        Query::factory(10)->create();
         Provider::factory(100)->create();
 
     }

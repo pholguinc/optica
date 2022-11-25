@@ -20,7 +20,7 @@ class QueryFactory extends Factory
     {
 
         return [
-			'code'=> $this->faker->numberBetween(0,8),
+			'code'=> 'CON-'. sprintf("%07d", $this->faker->unique()->numberBetween(0,9)),
             'description' => $this->faker->text(45),
 			'status' => $this->faker->randomElement(['Activo', 'Inactivo']),
             'sphere_right' => $this->faker->randomNumber(),

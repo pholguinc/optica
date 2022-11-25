@@ -2,16 +2,17 @@
     <table class="table table-bordered table-striped table-hover">
         <thead class="thead-dark">
             <tr>
-                <th rowspan="1" colspan="1">#</th>
-                <th rowspan="1" colspan="1">Código</th>
-                <th rowspan="1" colspan="1">Paciente</th>
-                <th rowspan="1" colspan="1">Empleado</th>
-                <th rowspan="1" colspan="1">Estado</th>
-                <th rowspan="1" colspan="1">Acciones</th>
+                <th>#</th>
+                <th>Código</th>
+                <th>Paciente</th>
+                <th>Empleado</th>
+                <th>Estado</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
 
+            @if ($queries->count())
             @foreach($queries as $query)
             <tr>
                 <td data-title="#" width="80px">{{ $loop->iteration }}</td>
@@ -19,27 +20,29 @@
                 <td data-title="Paciente">{{ $query->patient->name }}</td>
                 <td data-title="Empleado">{{ $query->user->name }}</td>
                 <td id="status" data-title="Estado" width="135px">
-                    <button type="button" class="btn bg-danger-400 btn-md text-white">
+                    <button type="button" class="text-white btn bg-danger-400 btn-md">
                         <span>Inactivo</span>
-                        <i class="fa fa-window-close ml-2"></i>
+                        <i class="ml-2 fa fa-window-close"></i>
                     </button>
                 </td>
                 <td id="actions" data-title="Acciones" width="175px" class="text-center">
-                    <a href="" class="btn bg-info-400 btn-md text-white" data-toggle="tooltip"
-                        data-placement="top" title="Ver">
+                    <a href="" class="text-white btn bg-info-400 btn-md" data-toggle="tooltip" data-placement="top" title="Ver">
                         <i class="fas fa-eye"></i>
                     </a>
-                    <a href="" class="btn bg-blue-400 btn-md text-white" data-toggle="tooltip"
-                        data-placement="top" title="Editar">
+                    <a href="" class="text-white bg-blue-400 btn btn-md" data-toggle="tooltip" data-placement="top" title="Editar">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a href="" class="btn bg-danger-400 btn-md text-white" data-toggle="tooltip"
-                        data-placement="top" title="Eliminar">
+                    <a href="" class="text-white btn bg-danger-400 btn-md" data-toggle="tooltip" data-placement="top" title="Eliminar">
                         <i class="fas fa-trash"></i>
                     </a>
                 </td>
             </tr>
             @endforeach
+            @else
+            <tr class="text-center odd">
+                <td valign="top" colspan="8">No matching records found</td>
+            </tr>
+            @endif
 
         </tbody>
 
