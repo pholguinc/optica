@@ -222,6 +222,13 @@
 *  Latest update: Mar 10, 2016
 *
 * ---------------------------------------------------------------------------- */
+.select {
+    width: 400px;
+    position: "relative";
+    left: 100px;
+    top: 50px;
+}
+
 .select2-container {
     outline: 0;
     position: relative;
@@ -245,6 +252,7 @@
     -ms-user-select: none;
     user-select: none;
 }
+
 .select2-selection--single:hover,
 .select2-selection--single:focus,
 .select2-container--open .select2-selection--single {
@@ -599,22 +607,7 @@
     position: relative;
     padding: 12px;
 }
-.select2-search--dropdown:after {
-    content: "\e98e";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    top: 50%;
-    left: 24px;
-    color: inherit;
-    display: block;
-    font-size: 12px;
-    margin-top: -6px;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    opacity: 0.6;
-    filter: alpha(opacity=60);
-}
+
 .select2-search--dropdown
     + .select2-results
     .select2-results__message:first-child {
@@ -623,7 +616,6 @@
 .select2-search--dropdown .select2-search__field {
     height: 36px;
     padding: 7px 12px;
-    padding-left: 36px;
     border-radius: 3px;
     border: 1px solid #ddd;
     outline: 0;
@@ -782,6 +774,63 @@
 .select2-result-repository__forks,
 .select2-result-repository__stargazers {
     margin-right: 15px;
+}
+
+.table .td-dark{
+    background-color: #212529;
+    border-color: #383f45;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.size_vision {
+    width: 100px;
+  }
+
+
+/*responsive*/
+
+@media (max-width: 900px) {
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .table td {
+        text-align: center;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    #button-add {
+        display: grid;
+        margin-top: 10px;
+    }
 }
 
 .panel {

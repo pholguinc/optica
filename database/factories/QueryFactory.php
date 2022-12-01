@@ -20,25 +20,34 @@ class QueryFactory extends Factory
     {
 
         return [
-			'code'=> 'CON-'. sprintf("%07d", $this->faker->unique()->numberBetween(0,9)),
-            'description' => $this->faker->text(45),
-			'status' => $this->faker->randomElement(['Activo', 'Inactivo']),
-            'sphere_right' => $this->faker->randomNumber(),
-            'cylinder_right' => $this->faker->randomNumber(),
-            'axis_right' => $this->faker->randomNumber(),
-            'av_right' => $this->faker->randomNumber(),
 
-            'sphere_left' => $this->faker->randomNumber(),
-            'cylinder_left' => $this->faker->randomNumber(),
-            'axis_left' => $this->faker->randomNumber(),
-            'av_left' => $this->faker->randomNumber(),
+            'sphereRf' => $this->faker->randomNumber(),
+            'cylinderRf' => $this->faker->randomNumber(),
+            'axisRf' => $this->faker->randomNumber(),
+            'dipRf' => $this->faker->randomNumber(),
 
-            'dip_near' => $this->faker->randomNumber(),
-            'dip_far' => $this->faker->randomNumber(),
+            'sphereLf' => $this->faker->randomNumber(),
+            'cylinderLf' => $this->faker->randomNumber(),
+            'axisLf' => $this->faker->randomNumber(),
+            'dipLf' => $this->faker->randomNumber(),
 
-            'observations' => $this->faker->text(500),
-            'user_id' => User::all()->random()->id,
-            'patient_id' => Patient::all()->random()->id
+
+            'sphereRn' => $this->faker->randomNumber(),
+            'cylinderRn' => $this->faker->randomNumber(),
+            'axisRn' => $this->faker->randomNumber(),
+            'dipRn' => $this->faker->randomNumber(),
+
+
+            'sphereLn' => $this->faker->randomNumber(),
+            'cylinderLn' => $this->faker->randomNumber(),
+            'axisLn' => $this->faker->randomNumber(),
+            'dipLn' => $this->faker->randomNumber(),
+
+
+            'diagnosis' => $this->faker->text(500),
+            'control' => $this->faker->date(),
+            'patient_id' => Patient::all()->random()->id,
+            'user_id' => User::all()->random()->id
 
         ];
     }

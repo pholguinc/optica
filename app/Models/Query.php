@@ -10,6 +10,9 @@ class Query extends Model
     use HasFactory;
 
 
+    protected $guarded = ['updated_at'];
+
+
 
     //Relación uno a muchos inversa
 

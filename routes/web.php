@@ -58,7 +58,7 @@ Route::get('admin/roles', RoleController::class)->name('admin.roles.index');
 Route::get('admin/caja', CashRegisterController::class)->name('admim.cashregister.index');
 Route::get('admin/categorias', CategoryController::class)->name('admin.categories.index');
 Route::get('admin/pacientes', PatientController::class)->name('admin.patients.index');
-Route::get('admin/pacientes/consultas', QueryController::class)->name('admin.patients.queries');
+Route::get('admin/pacientes/consultas', QueryController::class)->name('admin.patients.queries')->middleware('auth');
 Route::get('admin/proveedores', ProviderController::class)->name('admin.providers.index');
 Route::get('admin/productos', ProductController::class)->name('admin.products.index');
 Route::get('admin/compras', ShoppingController::class)->name('admin.shopping.index');

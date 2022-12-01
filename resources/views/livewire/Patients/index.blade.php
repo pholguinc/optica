@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="float-sm-right">
+                            <div id="button-add"class="float-sm-right">
                                 <button class="rounded btn bg-primary-400 btn-md" label="Open Modal" data-toggle="modal"
                                     data-target="#modalPatients">
                                     <i class="mr-2 fas fa-user-plus"></i>
@@ -59,19 +59,6 @@
 @section('css')
     @vite('resources/css/colors.css')
     @vite('resources/css/components.css')
-
-    <style>
-        @media (max-width: 575.98px) {
-            #button-add {
-                display: grid;
-                margin-top: 10px;
-            }
-        }
-
-        .tooltip {
-            top: 0;
-        }
-    </style>
 @endsection
 
 @section('footer')
@@ -116,6 +103,8 @@
                 }
             })
         })
+
+
 
 
     });

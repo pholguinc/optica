@@ -90,6 +90,14 @@ class UserController extends Component
 
     }
 
+    public function EditUser(User $user){
+
+    }
+
+    public function UpdateUser(User $user){
+
+    }
+
 
     public function resetUI(){
         $this->name = '';

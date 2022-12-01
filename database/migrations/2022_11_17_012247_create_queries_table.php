@@ -15,33 +15,39 @@ return new class extends Migration
     {
         Schema::create('queries', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->unique();
-            $table->string('description');
-            $table->enum('status', ['Activo', 'Inactivo'])->default('Inactivo');
 
-            /*Right Eye*/
-            $table->string('sphere_right');
-            $table->string('cylinder_right');
-            $table->string('axis_right');
-            $table->string('av_right');
+            $table->string('sphereRf');
+            $table->string('cylinderRf');
+            $table->string('axisRf');
+            $table->string('dipRf');
 
-            /*Left Eye*/
 
-            $table->string('sphere_left');
-            $table->string('cylinder_left');
-            $table->string('axis_left');
-            $table->string('av_left');
+            $table->string('sphereLf');
+            $table->string('cylinderLf');
+            $table->string('axisLf');
+            $table->string('dipLf');
 
-            $table->string('dip_near');
-            $table->string('dip_far');
 
-            $table->text('observations');
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('sphereRn');
+            $table->string('cylinderRn');
+            $table->string('axisRn');
+            $table->string('dipRn');
+
+
+            $table->string('sphereLn');
+            $table->string('cylinderLn');
+            $table->string('axisLn');
+            $table->string('dipLn');
+
+            $table->text('diagnosis')->nullable();
+            $table->date('control');
 
             $table->unsignedBigInteger('patient_id');
             $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
 
             $table->timestamps();
         });
