@@ -5,9 +5,9 @@
                 <th>#</th>
                 <th>Paciente</th>
                 <th>Optometro(a)</th>
-                <th>Fecha</th>
-                <th>COntrol</th>
-                <th>Acciones</th>
+                <th class="text-center">Fecha</th>
+                <th class="text-center">Control</th>
+                <th class="text-center">Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -16,12 +16,12 @@
             @foreach($queries as $query)
             <tr>
                 <td data-title="#" width="80px">{{ $loop->iteration }}</td>
-                <td data-title="Paciente">{{-- $query->patient->name --}}</td>
-                <td data-title="Optometro">{{-- $query->user->name --}}</td>
-                <td data-title="Control" width="135px">
-                    {{ $query->control }}
+                <td data-title="Paciente">{{$query->patient->name }}</td>
+                <td data-title="Optometro">{{ $query->user->name }}</td>
+                <td data-title="Control" class="text-center" width="135px">
+                    {{ $query->control->format('d-m-Y') }}
                 </td>
-                <td data-title="Fecha" width="135px">
+                <td data-title="Fecha"  class="text-center"width="135px">
                     {{ $query->created_at->format('d-m-Y') }}
                 </td>
                 <td id="actions" data-title="Acciones" width="175px" class="text-center">
@@ -40,7 +40,7 @@
             @endforeach
             @else
             <tr class="text-center odd">
-                <td valign="top" colspan="8">No matching records found</td>
+                <td valign="top" colspan="12">No matching records found</td>
             </tr>
             @endif
 

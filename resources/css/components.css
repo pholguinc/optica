@@ -842,9 +842,9 @@
     max-width: 100%;
     overflow-x: auto;
 }
-.panel.has-bg-image {
-    background-image: url(../images/backgrounds/panel_bg.png);
-}
+/*.panel.has-bg-image {
+    background-image: url(../../public/img/login.jpg);
+}*/
 .panel-flat > .panel-heading + .table,
 .panel-flat > .panel-heading + .table-responsive {
     border-top: 1px solid #ddd;
@@ -2459,3 +2459,10 @@ h6.panel-title,
 .validation-valid-label:before {
     content: "\ee73";
 }
+
+
+input[type="date"]:not(.has-value):before{
+    color: lightgray;
+    content: attr(placeholder);
+  }
+

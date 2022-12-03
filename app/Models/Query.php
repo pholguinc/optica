@@ -12,7 +12,7 @@ class Query extends Model
 
     protected $guarded = ['updated_at'];
 
-
+    protected $dates = ['control'];
 
     //Relación uno a muchos inversa
 

@@ -8,22 +8,23 @@
             <div class="col-sm-3">
                 <div class="form-group">
                     <label>Paciente <span class="text-danger">*</span></label>
-                    {{--  <select  wire:model.lazy="patientSelectedName" class="form-control select2 select-form" style="width: 100%;">
+                    <select wire:model.lazy="patientId" class="custom-select rounded-0" id="exampleSelectRounded0">
                         <option value="Elegir" disabled>Seleccionar Paciente</option>
-                        @foreach($queries as $query)
-                        <option value="{{ $query->id }}">{{$query->patient->name }}</option>
-                    @endforeach
-                    </select>--}}
+                        @foreach($patients as $patient)
+                        <option value="{{ $patient->id }}">{{$patient->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="form-group">
                     <label>Optómetro(a)<span class="text-danger">*</span></label>
-                    {{--  <select wire:model.lazy="userSelectedId" class="form-control select2 select-form" style="width: 100%;">
-                        @foreach($queries as $query)
-                        <option value="{{ $query->id }}">{{$query->user->name }}</option>
-                        @endforeach
-                    </select>--}}
+                    <select wire:model.lazy="userId" class="custom-select rounded-0" id="exampleSelectRounded0">
+                        <option value="Elegir" disabled>Seleccionar Optómetro(a)</option>
+                            @foreach($users as $user)
+                            <option value="{{ $user->id }}">{{$user->name }}</option>
+                            @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -220,7 +221,8 @@
 @section('css')
 @vite('resources/css/colors.css')
 @vite('resources/css/components.css')
-
+<style>
+</style>
 @endsection
 @section('js')
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -240,7 +242,7 @@
         }
     }).prepend('<option selected=""></option>');
 
-    $('#select2-form').on('change', function (e){
+    $('#select2-form').on('change', function(e) {
         @this.set('patientSelectedId', e.target.value);
     });
 
@@ -273,7 +275,6 @@
         @this.set('patientSelectedId', patId)
         @this.set('patientSelectedName', patName)
     });
-
 
 </script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

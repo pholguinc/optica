@@ -68,3 +68,7 @@ Route::get('admin/kardex', KardexController::class)->name('admin.kardex.index');
 //Reportes
 Route::get('admin/reportes/usuarios/pdf', [UserController::class, 'generatePDF']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

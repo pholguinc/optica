@@ -32,10 +32,8 @@ class QueryController extends Component
         $dipLn,
         $diagnosis,
         $control,
-        $userSelectedId,
-        $userSelectedName,
-        $patientSelectedId,
-        $patientSelectedName;
+        $userId,
+        $patientId;
 
     public $selectedInput = '';
 
@@ -53,13 +51,31 @@ class QueryController extends Component
     public function render()
     {
 
-
-        $queries = Query::paginate(8);
-        $users = User::all();
-        $patients = Patient::all();
+        if (strlen($this->search) > 0)
 
 
-        return view('livewire.Queries.index', compact('queries', 'users', 'patients'))->extends('adminlte::page');
+            $queries = Query::select('id', 'user_id', 'patient_id', 'created_at')->with([
+                'user' => function($query){
+                    $query->select('id', 'name');
+                },
+                'patient' => function($query){
+                    $query->select('id', 'name');
+                },
+
+            ])->whereHas('user', function($query){
+                return $query->where('name', 'like', '%' .$this->search. '%');
+            })->whereHas('patient', function($query){
+                return $query->where('name', 'like', '%' .$this->search. '%');
+            })
+            ->paginate(8);
+
+
+        else
+            $queries = Query::paginate(8);
+            $users = User::all();
+            $patients = Patient::all();
+            return view('livewire.Queries.index', compact('queries', 'users', 'patients'))->extends('adminlte::page');
+
     }
 
 
@@ -91,8 +107,8 @@ class QueryController extends Component
             'axisLn' => 'required',
             'dipLn' => 'required',
             'diagnosis' => 'required',
-            /*'patientSelectedId' => 'required',
-            'userSelectedId' => 'required',*/
+            'patientId' => 'required',
+            'userId' => 'required',
             'control' => 'required'
         ];
 
@@ -115,8 +131,8 @@ class QueryController extends Component
             'dipLn.required' => 'El campo es requerido',
             'diagnosis.required' => 'El campo es requerido',
             'control.required' => 'El campo es requerido',
-            'patientSelectedId.required' => 'El campo es requerido',
-            'userSelectedId.required' => 'El campo es requerido',
+            'patientId.required' => 'El campo es requerido',
+            'userId.required' => 'El campo es requerido'
 
         ];
 
@@ -141,8 +157,8 @@ class QueryController extends Component
             'dipLn' => $this->dipLn,
             'diagnosis' => $this->diagnosis,
             'control' => $this->control,
-            'patient_id' => $this->patientSelectedId,
-            'user_id' => $this->userSelectedId,
+            'patient_id' => $this->patientId,
+            'user_id' => $this->userId,
 
         ]);
 
@@ -175,8 +191,8 @@ class QueryController extends Component
             $this->dipLn = $query->dipLn;
             $this->diagnosis = $query->diagnosis;
             $this->control = $query->control;
-            $this->user_id = $query->user->name;
-            $this->patient_id = $query->patient->name;
+            $this->userId = $query->user_id;
+            $this->patientId = $query->patient_id;
 
     }
 
@@ -203,8 +219,8 @@ class QueryController extends Component
             'dipLn' => 'required',
             'diagnosis' => 'required',
             'control' => 'required',
-            'patientSelectedId' => 'required',
-            'userSelectedId' => 'required'
+            'patientId' => 'required',
+            'userId' => 'required'
 
         ];
 
@@ -227,8 +243,8 @@ class QueryController extends Component
             'dipLn.required' => 'El campo es requerido',
             'diagnosis.required' => 'El campo es requerido',
             'control.required' => 'El campo es requerido',
-            'patientSelectedId.required' => 'El campo es requerido',
-            'userSelectedId.required' => 'El campo es requerido',
+            'patientId.required' => 'El campo es requerido',
+            'userId.required' => 'El campo es requerido',
 
 
         ];
@@ -253,9 +269,8 @@ class QueryController extends Component
         $query->dipLn= $this->dipLn;
         $query->diagnosis= $this->diagnosis;
         $query->control = $this->control;
-        $query->patient_id = $this->patientSelectedId;
-        $query->user_id = $this->userSelectedId;
-
+        $query->patient_id = $this->patientId;
+        $query->user_id = $this->userId;
 
         $query->update();
         $this->emit('render');

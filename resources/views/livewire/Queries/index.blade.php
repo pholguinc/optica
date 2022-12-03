@@ -9,7 +9,7 @@
                             <span class="text-blue-400 font-weight-bold">Inicio</span>
                         </a>
                     </li>
-                    <li class="breadcrumb-item ">Pacientes</li>
+                    <li href="/admin/pacientes" class="breadcrumb-item">Pacientes</li>
                     <li class="breadcrumb-item active">Consultas</li>
                 </ol>
             </div>

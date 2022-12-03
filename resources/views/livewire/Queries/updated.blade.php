@@ -8,14 +8,24 @@
 
             <div class="col-sm-3">
                 <div class="form-group">
-                    <label>Optómetro(a)<span class="text-danger">*</span></label>
-                    {{-- <input type="text" wire:model="user_id" class="text-center form-control text-secomdary"> --}}
+                    <label>Paciente <span class="text-danger">*</span></label>
+                    <select wire:model.lazy="patientId" class="custom-select rounded-0" id="exampleSelectRounded0">
+                        <option value="Elegir" disabled>Seleccionar Paciente</option>
+                        @foreach($queries as $query)
+                        <option value="{{ $query->id }}">{{$query->patient->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="form-group">
-                    <label>Paciente <span class="text-danger">*</span></label>
-                    {{-- <input type="text" wire:model="patient_id" class="text-center form-control text-secomdary"> --}}
+                    <label>Optómetro(a)<span class="text-danger">*</span></label>
+                    <select wire:model.lazy="userId" class="custom-select rounded-0" id="exampleSelectRounded0">
+                        <option value="Elegir" disabled>Seleccionar Optómetro(a)</option>
+                            @foreach($queries as $query)
+                            <option value="{{ $query->id }}">{{$query->user->name }}</option>
+                            @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -36,7 +46,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
                         </div>
-                        <input type="date" class="text-center form-control">
+                        <input wire:model='control' type="date" class="text-center form-control">
                     </div>
                 </div>
             </div>
@@ -199,7 +209,7 @@
         <button wire:click="updateQuery()" wire:loading.attr="disabled" class="btn btn-md btn-outline-blue">
             <span>
                 <i class="mr-1 fas fa-save"></i>
-                Guardar
+                Actualizar
             </span>
         </button>
         <button class="btn btn-md btn-default" data-dismiss="modal" wire:click.prevent="resetUI()">
