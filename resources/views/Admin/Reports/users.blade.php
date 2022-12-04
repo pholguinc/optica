@@ -15,8 +15,31 @@
 
     </header>
     <main>
-        <h5 class="text-center mt-4 mb-4"><strong>Reporte de Usarios General</strong></h5>
-        <table class="table table-striped text-center">
+        <h5 class="mt-4 mb-4 text-center"><strong>Reporte de Usarios General</strong></h5>
+        <table class="table text-center table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Fecha de Registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->username }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->phone }}</td>
+                        <td>
+                            {{ $user->created_at->format('d/m/Y') }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <table class="table text-center table-striped">
             <thead>
                 <tr>
                     <th scope="col">Nombre</th>
@@ -41,7 +64,7 @@
         </table>
     </main>
     <footer>
-        <p class="text-uppercase mt-3"><strong>Asesoría Optica D&R</strong></p>
+        <p class="mt-3 text-uppercase"><strong>Asesoría Optica D&R</strong></p>
     </footer>
 </body>
 

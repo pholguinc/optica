@@ -25,7 +25,7 @@
                     {{ $query->created_at->format('d-m-Y') }}
                 </td>
                 <td id="actions" data-title="Acciones" width="175px" class="text-center">
-                    <a href="" class="text-white btn bg-info-400 btn-md" data-toggle="tooltip" data-placement="top" title="Ver">
+                    <a href="/admin/historia-clinica" class="text-white btn bg-info-400 btn-md" data-toggle="tooltip" data-placement="top" title="Ver">
                         <i class="fas fa-clipboard"></i>
                     </a>
 
@@ -50,4 +50,5 @@
     </table>
 
 </div>
+
 

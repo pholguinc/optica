@@ -1,57 +1,96 @@
-<x-adminlte-modal id="modalProduct" title="Registrar Nuevo Producto" theme="blue-400" icon="fas fa-bolt" size='lg'>
-    <div class="alert alert-info alert-styled-left text-blue-800 content-group">
+<x-adminlte-modal wire:ignore.self id="modalProduct" title="Registrar Nuevo Producto" theme="blue-400" icon="fas fa-bolt" size='lg'>
+    <div class="text-blue-800 alert alert-info alert-styled-left content-group">
         <span class="text-semibold">Estimado usuario</span>
         Los campos remarcados con <span class="text-danger"> * </span> son necesarios.
-        <input type="hidden" id="txtID" name="txtID" class="form-control" value="">
-        <input type="hidden" id="txtProceso" name="txtProceso" class="form-control" value="Registro">
     </div>
     <form>
         <div class="row">
-            <div class="col-sm-6">
-
+            <div class="col-sm-12 col-md-8">
                 <div class="form-group">
-                    <label>Código de Barra</label>
-                    <div class="input-group mb-3">
+                    <label>Nombre</label>
+                    <div class="mb-3 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-box"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Nombre del producto">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="form-group">
+                    <label>Código</label>
+                    <div class="mb-3 input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                         </div>
-                        <input type="number" class="form-control" placeholder="Código Autogenerado" readonly disabled>
+                        <input type="text" class="form-control" placeholder="Código del producto">
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
 
+            <div class="col-sm-12 col-md-4">
                 <div class="form-group">
-                    <label>Nombre <span class="text-danger">*</span></label>
-                    <input type="text" name="" id="" class="form-control" placeholder="Ingrese el nombre de la categoría">
-                </div>
-                <div class="form-group">
-                    <label>Descripción <span class="text-danger">*</span></label>
-                    <input type="text" name="" id="" class="form-control" placeholder="Ingrese descripción de la categoría">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label>Stock <span class="text-danger">*</span></label>
-                    <div class="input-group mb-3">
+                    <label>Costo</label>
+                    <div class="mb-3 input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-plus"></i></span>
+                            <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                         </div>
-                        <input type="number" class="form-control" placeholder="Ingrese el stock del producto...">
+                        <input type="text" class="form-control" placeholder="Costo del producto">
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+
+            <div class="col-sm-12 col-md-4">
                 <div class="form-group">
-                    <label>Estado <span class="text-danger">*</span></label>
-                    <select class="form-control select2 js-example-basic-single" style="width: 100%;">
-                        <option selected="selected">Activo</option>
-                        <option>Inactivo</option>
+                    <label>Precio</label>
+                    <div class="mb-3 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Precio del producto">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="form-group">
+                    <label>Stock</label>
+                    <div class="mb-3 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Stock del producto">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <div class="form-group">
+                    <label>Alertas</label>
+                    <div class="mb-3 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Alertas">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <div class="form-group">
+                    <label>Categoría</label>
+                    <select wire:model='categoryId' class="custom-select rounded-0">
+                        <option value="Elegir" disabled>Elegir</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name}}</option>
+                        @endforeach
                     </select>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-8">
+                <div class="form-group custom-file">
+                    <input type="file" class="custom-file-input" wire:model='image' accept="image/x-png, image/jpeg">
+                    <label class="custom-file-label">Imagen {{$image}}</label>
                 </div>
             </div>
         </div>

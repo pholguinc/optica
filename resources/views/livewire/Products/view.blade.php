@@ -2,11 +2,13 @@
     <thead class="thead-dark">
         <tr>
             <th rowspan="1" colspan="1">#</th>
+            <th rowspan="1" colspan="1">Imagen</th>
             <th rowspan="1" colspan="1">Nombre</th>
             <th rowspan="1" colspan="1">Código</th>
-            <th rowspan="1" colspan="1">Descripción</th>
-            <th rowspan="1" colspan="1">Stock</th>
+            <th rowspan="1" colspan="1">Categoría</th>
+            <th rowspan="1" colspan="1">Precio</th>
             <th rowspan="1" colspan="1">Estado</th>
+            <th rowspan="1" colspan="1">Inv. Min</th>
             <th rowspan="1" colspan="1">Acciones</th>
         </tr>
     </thead>
@@ -15,26 +17,27 @@
             @foreach ($products as $product)
                 <tr>
                     <td width="80px">{{ $loop->iteration }}</td>
+                    <td>
+                        <span>
+                            <img src="{{ asset('storage/products/'.$product->image) }}" alt="" height="70" width="80" class="rounded">
+                        </span>
+                    </td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->barcode }}</td>
-                    <td>{{ $product->description }}</td>
-                    <td>{{ $product->stock }}</td>
-                    <td width="135px">
-                        <button type="button" class="btn bg-danger-400 btn-md text-white">
-                            <span>Inactivo</span>
-                            <i class="fa fa-window-close ml-2"></i>
-                        </button>
-                    </td>
+                    <td>{{ $product->category }}</td>
+                    <td>{{ $product->price}}</td>
+                    <td>{{ $product->stock}}</td>
+                    <td>{{ $product->alerts}}</td>
                     <td width="175px" class="text-center">
-                        <a href="" class="btn bg-info-400 btn-md text-white" data-toggle="tooltip"
+                        <a href="" class="text-white btn bg-info-400 btn-md" data-toggle="tooltip"
                             data-placement="top" title="Ver">
                             <i class="fas fa-eye"></i>
                         </a>
-                        <a href="" class="btn bg-blue-400 btn-md text-white" data-toggle="tooltip"
+                        <a href="" class="text-white bg-blue-400 btn btn-md" data-toggle="tooltip"
                             data-placement="top" title="Editar">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="" class="btn bg-danger-400 btn-md text-white" data-toggle="tooltip"
+                        <a href="" class="text-white btn bg-danger-400 btn-md" data-toggle="tooltip"
                             data-placement="top" title="Eliminar">
                             <i class="fas fa-trash"></i>
                         </a>
