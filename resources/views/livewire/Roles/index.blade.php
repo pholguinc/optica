@@ -1,12 +1,12 @@
 <div>
     <div class="card card-outline card-primary-400">
-        <div class="card-header p-0">
+        <div class="p-0 card-header">
             <div>
-                <ol class="breadcrumb mb-0 bg-white">
+                <ol class="mb-0 bg-white breadcrumb">
                     <li class="breadcrumb-item">
-                        <i class="fas fa-home mr-2 text-secondary"></i>
+                        <i class="mr-2 fas fa-home text-secondary"></i>
                         <a href="/admin">
-                            <span class="font-weight-bold text-blue-400">Inicio</span>
+                            <span class="text-blue-400 font-weight-bold">Inicio</span>
                         </a>
                     </li>
                     <li class="breadcrumb-item active">Roles</li>
@@ -14,21 +14,21 @@
             </div>
             <div class="border-top">
                 <div class="container-fluid">
-                    <div class="row mb-3 mt-3 p-2">
+                    <div class="p-2 mt-3 mb-3 row">
                         <div class="col-sm-6">
 
                             <div class="input-group">
-                                <input class="form-control py-2 border-right-0 border" type="search" placeholder="Escriba para filtrar" wire:model="search">
+                                <input class="py-2 border form-control border-right-0" type="search" placeholder="Escriba para filtrar" wire:model="search">
                                 <span class="input-group-append">
-                                    <div class="input-group-text bg-transparent"><i class="fa fa-search"></i>
+                                    <div class="bg-transparent input-group-text"><i class="fa fa-search"></i>
                                     </div>
                                 </span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="float-sm-right" id="button-add">
-                                <button class="btn bg-primary-400 btn-md rounded" label="Open Modal" data-toggle="modal" data-target="#modalRole">
-                                    <i class="fas fa-user-plus mr-2"></i>
+                                <button class="rounded btn bg-primary-400 btn-md" label="Open Modal" data-toggle="modal" data-target="#modalRole">
+                                    <i class="mr-2 fas fa-user-plus"></i>
                                     <span>Agregar Nuevo</span>
                                 </button>
                             </div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-body p-0">
+        <div class="p-0 card-body">
             @include('livewire.Roles.view')
             @include('livewire.Roles.create')
             @include('livewire.Roles.update')

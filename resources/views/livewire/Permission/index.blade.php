@@ -26,9 +26,10 @@
                                 </span>
                             </div>
                         </div>
+
                         <div class="col-sm-6">
                             <div class="float-sm-right" id="button-add">
-                                <button class="rounded btn bg-primary-400 btn-md" label="Open Modal" data-toggle="modal" data-target="#modalUser">
+                                <button class="rounded btn bg-primary-400 btn-md" label="Open Modal" data-toggle="modal" data-target="#modalPermission">
                                     <i class="mr-2 fas fa-user-plus"></i>
                                     <span>Agregar Nuevo</span>
                                 </button>
@@ -39,17 +40,9 @@
             </div>
         </div>
         <div class="p-0 card-body">
-            @include('livewire.Users.data')
-            @include('livewire.Users.create')
-            @include('livewire.Users.updated')
-            @include('livewire.Users.view')
-
-        </div>
-        <div>
-            <div class="float-right">
-                {{  $users->links()  }}
-            </div>
-
+           @include('livewire.Permission.view')
+           @include('livewire.Permission.create')
+           @include('livewire.Permission.updated')
         </div>
     </div>
 </div>
@@ -60,75 +53,6 @@
 @vite('resources/css/colors.css')
 @vite('resources/css/components.css')
 
-<style>
-    @media (max-width: 576px) {
-        #button-add {
-            display: grid;
-            margin-top: 10px;
-        }
-    }
-
-    .tooltip {
-        top: 0;
-    }
-
-    .table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    .table td,
-    .table th {
-        border: 1px solid #ddd;
-        text-align: center;
-        font-size: 16px;
-    }
-
-
-    .table tbody tr:nth-child(even) {
-        background-color: #f5f5f5;
-    }
-
-    /*responsive*/
-
-    @media(max-width: 700px) {
-        .table thead {
-            display: none;
-        }
-
-        .table,
-        .table tbody,
-        .table tr,
-        .table td {
-            display: block;
-            width: 100%;
-        }
-
-        .table tr {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .table td {
-            text-align: center;
-            position: relative;
-        }
-
-        .table td::before {
-            content: attr(data-label);
-            position: absolute;
-            left: 0;
-            width: 50%;
-            padding-left: 15px;
-            font-size: 15px;
-            font-weight: bold;
-            text-align: left;
-        }
-    }
-
-
-
-</style>
 @endsection
 
 @section('footer')
@@ -148,11 +72,11 @@
         });
 
         Livewire.on('render', () => {
-            $('#modalUser').modal('hide');
-            $('#EditUser').modal('hide');
+            $('#modalRole').modal('hide');
+            $('#EditRole').modal('hide');
         });
 
-        Livewire.on('deleteUser', UserId => {
+        Livewire.on('deletePermission', PermissionId => {
             Swal.fire({
                 title: '¿Está seguro de querer eliminarlo?',
                 text: "¡Al eliminarlo no hay opción a recuperarlo!",
@@ -164,7 +88,7 @@
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Livewire.emit('delete', UserId);
+                    Livewire.emit('delete', PermissionId);
                     Swal.fire(
                         'Eliminado!'
                         , '¡¡Tu registro fue eliminado con éxito!!'
@@ -178,4 +102,5 @@
 
 </script>
 @endsection
+
 

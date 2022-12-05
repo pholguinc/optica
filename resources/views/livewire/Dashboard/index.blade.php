@@ -145,7 +145,7 @@
                 </div>
                 <div class="card-body">
                     <div class="chart">
-                        <canvas id="myChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        <canvas id="products" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                 </div>
             </div>
@@ -223,12 +223,12 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    var ctx = document.getElementById('myChart');
+    var ctx = document.getElementById('products');
     var myChart2 = document.getElementById('myChart2');
     var myChart3 = document.getElementById('myChart3');
     var myChart4 = document.getElementById('myChart4');
 
-    var myChart = new Chart(ctx, {
+    var products = new Chart(ctx, {
         type: 'pie'
         , data: {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']

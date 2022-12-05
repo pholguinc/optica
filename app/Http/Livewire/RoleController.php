@@ -14,7 +14,7 @@ class RoleController extends Component
 
     protected $listeners = ['render', 'delete'];
 
-    public $roleName, $search, $role;
+    public $roleName, $search, $role, $permissionName;
 
     private $pagination = 8;
 
@@ -39,7 +39,9 @@ class RoleController extends Component
         else
             $roles = Role::orderBy('name', 'desc')->paginate(8);
 
-        return view('livewire.Roles.index', compact('roles'))->extends('adminlte::page');
+        $permissions = Permission::all();
+
+        return view('livewire.Roles.index', compact('roles', 'permissions'))->extends('adminlte::page');
     }
 
     public function CreateRole()

@@ -8,6 +8,7 @@ use App\Http\Livewire\DashboardController;
 use App\Http\Livewire\EmployeeController;
 use App\Http\Livewire\KardexController;
 use App\Http\Livewire\PatientController;
+use App\Http\Livewire\PermissionController;
 use App\Http\Livewire\ProductController;
 use App\Http\Livewire\ProviderController;
 use App\Http\Livewire\QueryController;
@@ -18,6 +19,7 @@ use App\Http\Livewire\ShoppingController;
 use App\Http\Livewire\UserController;
 use App\Http\Livewire\Users;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use WPGraphQL\Router;
 
