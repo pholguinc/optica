@@ -1,7 +1,7 @@
 <div>
     <div class="row">
         <div class="col-sm-6 col-md-3">
-            <div class="panel panel-body bg-primary-300 text-white shadow-lg p-3 mb-5 rounded border">
+            <div class="p-3 mb-5 text-white border rounded shadow-lg panel panel-body bg-primary-300">
                 <div class="media no-margin">
                     <div class="media-body">
                         <h3 class="no-margin">$ 0.00</h3>
@@ -9,13 +9,13 @@
                     </div>
 
                     <div class="media-right media-middle">
-                        <i class="fas fa-money-bill icon-3x opacity-75"></i>
+                        <i class="opacity-75 fas fa-money-bill icon-3x"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
-            <div class="panel panel-body bg-danger-300 text-white shadow-lg p-3 mb-5 rounded border">
+            <div class="p-3 mb-5 text-white border rounded shadow-lg panel panel-body bg-danger-300">
                 <div class="media no-margin">
                     <div class="media-body">
                         <h3 class="no-margin">$ 0.00</h3>
@@ -23,13 +23,13 @@
                     </div>
 
                     <div class="media-right media-middle">
-                        <i class="fas fa-shopping-bag icon-3x opacity-75"></i>
+                        <i class="opacity-75 fas fa-shopping-bag icon-3x"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
-            <div class="panel panel-body bg-success-300 text-white shadow-lg p-3 mb-5 rounded border">
+            <div class="p-3 mb-5 text-white border rounded shadow-lg panel panel-body bg-success-300">
                 <div class="media no-margin">
                     <div class="media-body">
                         <h3 class="no-margin">$ 0.00</h3>
@@ -37,13 +37,13 @@
                     </div>
 
                     <div class="media-right media-middle">
-                        <i class="fas fa-money-bill-wave icon-3x opacity-75"></i>
+                        <i class="opacity-75 fas fa-money-bill-wave icon-3x"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
-            <div class="panel panel-body bg-teal-400 text-white shadow-lg p-3 mb-5 rounded border">
+            <div class="p-3 mb-5 text-white bg-teal-400 border rounded shadow-lg panel panel-body">
                 <div class="media no-margin">
                     <div class="media-body">
                         @php
@@ -55,13 +55,13 @@
                     </div>
 
                     <div class="media-right media-middle">
-                        <i class="fas  fa-shipping-fast icon-3x opacity-75"></i>
+                        <i class="opacity-75 fas fa-shipping-fast icon-3x"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
-            <div class="panel panel-body bg-green-400 text-white shadow-lg p-3 mb-5 rounded border">
+            <div class="p-3 mb-5 text-white bg-green-400 border rounded shadow-lg panel panel-body">
                 <div class="media no-margin">
                     <div class="media-body">
                         @php
@@ -73,13 +73,13 @@
                     </div>
 
                     <div class="media-right media-middle">
-                        <i class="fas fa-tags icon-3x opacity-75"></i>
+                        <i class="opacity-75 fas fa-tags icon-3x"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
-            <div class="panel panel-body bg-slate-400 text-white shadow-lg p-3 mb-5 rounded border">
+            <div class="p-3 mb-5 text-white border rounded shadow-lg panel panel-body bg-slate-400">
                 <div class="media no-margin">
                     <div class="media-body">
                         @php
@@ -91,13 +91,31 @@
                     </div>
 
                     <div class="media-right media-middle">
-                        <i class="fas fa-glasses icon-3x opacity-75"></i>
+                        <i class="opacity-75 fas fa-glasses icon-3x"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
-            <div class="panel panel-body bg-pink-300 text-white shadow-lg p-3 mb-5 rounded border">
+            <div class="p-3 mb-5 text-white bg-pink-300 border rounded shadow-lg panel panel-body">
+                <div class="media no-margin">
+                    <div class="media-body">
+                        @php
+                        use App\Models\Patient;
+                        $cant_patients = Patient::count();
+                        @endphp
+                        <h3 class="no-margin">{{ $cant_patients }}</h3>
+                        <span class="info-box-text">Pacientes</span>
+                    </div>
+
+                    <div class="media-right media-middle">
+                        <i class="opacity-75 fas fa-users icon-3x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="p-3 mb-5 text-white bg-orange-300 border rounded shadow-lg panel panel-body">
                 <div class="media no-margin">
                     <div class="media-body">
                         @php
@@ -105,25 +123,11 @@
                         $cant_users = User::count();
                         @endphp
                         <h3 class="no-margin">{{ $cant_users }}</h3>
-                        <span class="info-box-text">Clientes</span>
-                    </div>
-
-                    <div class="media-right media-middle">
-                        <i class="fas fa-users icon-3x opacity-75"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="panel panel-body bg-orange-300 text-white shadow-lg p-3 mb-5 rounded border">
-                <div class="media no-margin">
-                    <div class="media-body">
-                        <h3 class="no-margin">$ 0.00</h3>
                         <span class="info-box-text">Empleados</span>
                     </div>
 
                     <div class="media-right media-middle">
-                        <i class="fas fa-user-tie icon-3x opacity-75"></i>
+                        <i class="opacity-75 fas fa-user-tie icon-3x"></i>
                     </div>
                 </div>
             </div>
@@ -135,7 +139,7 @@
             <div class="card card-primary card-outline">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <i class="fas fa-chart-pie mr-1"></i>
+                        <i class="mr-1 fas fa-chart-pie"></i>
                         Stock de Productos
                     </h3>
                 </div>
@@ -150,7 +154,7 @@
             <div class="card card-primary card-outline">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <i class="fas fa-chart-pie mr-1"></i>
+                        <i class="mr-1 fas fa-chart-pie"></i>
                         Productos más vendidos
                     </h3>
                 </div>
@@ -167,7 +171,7 @@
             <div class="card card-primary card-outline">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <i class="fas fa-chart-pie mr-1"></i>
+                        <i class="mr-1 fas fa-chart-pie"></i>
                         Compras Mensuales
                     </h3>
                 </div>
@@ -182,7 +186,7 @@
             <div class="card card-primary card-outline">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <i class="fas fa-chart-pie mr-1"></i>
+                        <i class="mr-1 fas fa-chart-pie"></i>
                         Ventas Mensuales
                     </h3>
                 </div>

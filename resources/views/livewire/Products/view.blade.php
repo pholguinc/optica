@@ -1,54 +1,69 @@
-<table class="table table-bordered table-striped table-hover">
-    <thead class="thead-dark">
-        <tr>
-            <th rowspan="1" colspan="1">#</th>
-            <th rowspan="1" colspan="1">Imagen</th>
-            <th rowspan="1" colspan="1">Nombre</th>
-            <th rowspan="1" colspan="1">Código</th>
-            <th rowspan="1" colspan="1">Categoría</th>
-            <th rowspan="1" colspan="1">Precio</th>
-            <th rowspan="1" colspan="1">Estado</th>
-            <th rowspan="1" colspan="1">Inv. Min</th>
-            <th rowspan="1" colspan="1">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if ($products->count())
-            @foreach ($products as $product)
+<div class="table-responsive">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="thead-dark">
                 <tr>
-                    <td width="80px">{{ $loop->iteration }}</td>
-                    <td>
-                        <span>
-                            <img src="{{ asset('storage/products/'.$product->image) }}" alt="" height="70" width="80" class="rounded">
-                        </span>
+                    <th width="10px">#</th>
+                    <th width="10px">Imagen</th>
+                    <th width="500px">Nombre</th>
+                    <th width="150px">Código</th>
+                    <th width="450px">Categoría</th>
+                    <th width="350px" class="text-center">Precio</th>
+                    <th width="250px" class="text-center">Stock</th>
+                    <th width="250px" class="text-center">Inv. Min</th>
+                    <th width="450px">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @if ($products->count())
+                @foreach ($products as $product)
+                <tr>
+                    <td width="5px">
+                        <h6 class="mt-4">
+                            {{ $loop->iteration }}
+                        </h6>
                     </td>
-                    <td>{{ $product->name }}</td>
-                    <td>{{ $product->barcode }}</td>
-                    <td>{{ $product->category }}</td>
-                    <td>{{ $product->price}}</td>
-                    <td>{{ $product->stock}}</td>
-                    <td>{{ $product->alerts}}</td>
-                    <td width="175px" class="text-center">
-                        <a href="" class="text-white btn bg-info-400 btn-md" data-toggle="tooltip"
-                            data-placement="top" title="Ver">
-                            <i class="fas fa-eye"></i>
-                        </a>
-                        <a href="" class="text-white bg-blue-400 btn btn-md" data-toggle="tooltip"
-                            data-placement="top" title="Editar">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <a href="" class="text-white btn bg-danger-400 btn-md" data-toggle="tooltip"
-                            data-placement="top" title="Eliminar">
-                            <i class="fas fa-trash"></i>
-                        </a>
+                    <td>
+                        <div class="d-flex align-items-center"><img class="rounded-circle" src="{{ asset('storage/products/'. $product->image ) }}" width="80"></div>
+                    </td>
+                    <td>
+                        <h6 class="mt-4">{{ $product->name }}</h6>
+                    </td>
+                    <td>
+                        <h6 class="mt-4">{{ $product->barcode }}</h6>
+                    </td>
+                    <td>
+                        <h6 class="mt-4">{{ $product->category }}</h6>
+                    </td>
+                    <td>
+                        <h6 class="mt-4 text-center">F{{ $product->price }}</h6>
+                    </td>
+                    <td>
+                        <h6 class="mt-4 text-center">{{ $product->stock }}</h6>
+                    </td>
+                    <td>
+                        <h6 class="mt-4 text-center">{{ $product->alerts }}</h6>
+                    </td>
+                    <td class="text-center">
+                        <div class="mt-4">
+                            <a wire:click="Edit({{ $product->id }})" class="text-white bg-blue-400 btn btn-md" data-toggle="modal" data-target="#EditProduct">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a wire:click="$emit('deleteProduct', {{ $product->id }})" class="text-white btn bg-danger-400 btn-md" data-toggle="tooltip" data-placement="top" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
                     </td>
                 </tr>
-            @endforeach
-        @else
-        <tr>
-            <td colspan="10" class="text-center font-weight-bold">No hay registros con su búsqueda</td>
-        </tr>
-        @endif
-    </tbody>
+                @endforeach
+                @else
+                <tr>
+                    <td colspan="10" class="text-center font-weight-bold">No hay registros con su búsqueda</td>
+                </tr>
+                @endif
+            </tbody>
+        </table>
+    </div>
 
-</table>
+</div>

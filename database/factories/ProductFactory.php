@@ -24,7 +24,7 @@ class ProductFactory extends Factory
             'stock' => $this->faker->numberBetween(0,9),
             'price' => $this->faker->numberBetween(0,8),
             'alerts' => $this->faker->numberBetween(0,8),
-            'image' => $this->faker->text(5),
+            'image' => 'noimg.jpg',
             'category_id' => Category::all()->random()->id,
         ];
     }

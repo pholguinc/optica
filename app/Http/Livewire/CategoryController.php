@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Category;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -113,6 +114,13 @@ class CategoryController extends Component
         $this->name = '';
         $this->description = '';
         $this->resetValidation();
+    }
+
+
+    public function generatePDF(){
+        $categories = Category::all();
+        $pdf = PDF::loadView('reports.categories', compact('categories'));
+        return $pdf->setPaper('a4', 'landscape')->stream('reportecategorias.pdf');
     }
 
 }

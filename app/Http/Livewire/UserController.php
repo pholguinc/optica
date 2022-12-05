@@ -46,7 +46,7 @@ class UserController extends Component
 
     public function generatePDF(){
         $users = User::all();
-        $pdf = PDF::loadView('Admin.Reports.users', compact('users'));
+        $pdf = PDF::loadView('reports.users', compact('users'));
         return $pdf->setPaper('a4', 'landscape')->stream('reporteusuarios.pdf');
     }
 

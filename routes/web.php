@@ -17,6 +17,7 @@ use App\Http\Livewire\SaleController;
 use App\Http\Livewire\ShoppingController;
 use App\Http\Livewire\UserController;
 use App\Http\Livewire\Users;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use WPGraphQL\Router;
 
@@ -67,6 +68,11 @@ Route::get('admin/kardex', KardexController::class)->name('admin.kardex.index');
 
 //Reportes
 Route::get('admin/reportes/usuarios/pdf', [UserController::class, 'generatePDF']);
+Route::get('admin/reportes/usuarios/excel', [UserController::class, 'generateReport']);
+Route::get('admin/reportes/categorias/pdf', [CategoryController::class, 'generatePDF']);
+Route::get('admin/reportes/productos/pdf', [ProductController::class, 'generatePDFProducts']);
+
+
 Route::get('admin/historia-clinica', [QueryController::class, 'historyReport'])->name('admin.kardex.index');
 
 

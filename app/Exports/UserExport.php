@@ -41,8 +41,8 @@ WithColumnFormatting, WithHeadings, WithColumnWidths, WithDrawings, WithStyles
     public function headings(): array
     {
         return [
-            'Usuario',
-            'Nombre de Usuario',
+            'Nombres',
+            'Apellidos',
             'E-mail',
             'Teléfono',
             'Fecha de Registro',
@@ -55,7 +55,7 @@ WithColumnFormatting, WithHeadings, WithColumnWidths, WithDrawings, WithStyles
         return [
 
             $user->name,
-            $user->username,
+            $user->lastname,
             $user->email,
             $user->phone,
             Date::dateTimeToExcel($user->created_at),
