@@ -17,11 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastname');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->enum('status', ['Activo', 'Inactivo'])->default('Activo');
             $table->string('phone');
             $table->string('dni');
             $table->foreignId('current_team_id')->nullable();

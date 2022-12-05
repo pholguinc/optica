@@ -58,8 +58,8 @@ class UserController extends Component
             'name' => 'required|min:2',
             'lastname' => 'required',
             'phone' => 'required|min:9',
-            'dni' => 'required|min:8|unique:users',
-            'email' => 'required|min:9|unique:users',
+            'dni' => 'required|min:8',
+            'email' => 'required|min:9',
         ];
         $messages = [
             'name.required' => 'El nombre es requerido',
@@ -69,10 +69,8 @@ class UserController extends Component
             'phone.min' => 'Ingrese un número de celular válido',
             'dni.required' => 'El DNI es requerido',
             'dni.min' => 'El DNI debe tener al menos 8 caracteres',
-            'dni.unique' => 'El DNI de usuario ya existe',
             'email.required' => 'El e-mail es requerido',
             'email.min' => 'La contraseña debe tener al menos 9 caracteres',
-            'email.unique' => 'El e-mail ya existe',
         ];
 
         $this->validate($rules, $messages);
@@ -110,8 +108,8 @@ class UserController extends Component
             'name' => 'required|min:2',
             'lastname' => 'required',
             'phone' => 'required|min:9',
-            'dni' => 'required|min:8|unique:users',
-            'email' => 'required|min:9|unique:users',
+            'dni' => 'required|min:8',
+            'email' => 'required|min:9',
         ];
         $messages = [
             'name.required' => 'El nombre es requerido',
@@ -121,10 +119,8 @@ class UserController extends Component
             'phone.min' => 'Ingrese un número de celular válido',
             'dni.required' => 'El DNI es requerido',
             'dni.min' => 'El DNI debe tener al menos 8 caracteres',
-            'dni.unique' => 'El DNI de usuario ya existe',
             'email.required' => 'El e-mail es requerido',
             'email.min' => 'La contraseña debe tener al menos 9 caracteres',
-            'email.unique' => 'El e-mail ya existe',
         ];
 
         $this->validate($rules, $messages);
