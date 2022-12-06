@@ -37,8 +37,7 @@ class UserController extends Component
     public function render()
     {
         $users = User::paginate(8);
-        return view('livewire.Users.index', compact('users'))
-        ->extends('adminlte::page');
+        return view('livewire.Users.index', compact('users'))->extends('adminlte::page');
     }
 
     public function generateReport(){
