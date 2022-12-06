@@ -19,10 +19,7 @@ class ProviderFactory extends Factory
         return [
             'name' => $this->faker->name,
             'address' => $this->faker->address(),
-            'representative' => $this->faker->name,
             'phone' => $this->faker->phoneNumber(),
-            'whatsapp' =>  $this->faker->phoneNumber(),
-			'status' => $this->faker->randomElement(['Activo', 'Inactivo']),
         ];
     }
 }

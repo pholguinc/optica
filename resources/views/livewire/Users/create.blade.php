@@ -1,4 +1,4 @@
-<x-adminlte-modal wire:ignore.self id="modalUser" title="Registrar Nuevo Rol" theme="blue-400" icon="fas fa-bolt" size='lg'>
+<x-adminlte-modal wire:ignore.self id="modalUser" title="Registrar Nuevo Usuario" theme="blue-400" icon="fas fa-bolt" size='lg'>
     <div class="text-blue-800 alert alert-info alert-styled-left content-group">
         <span class="text-semibold">Estimado usuario</span>
         Los campos remarcados con <span class="text-danger"> * </span> son necesarios.

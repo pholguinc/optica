@@ -17,10 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
-            $table->string('representative');
             $table->string('phone');
-            $table->string('whatsapp');
-            $table->enum('status', ['Activo', 'Inactivo'])->default('Inactivo');
             $table->timestamps();
         });
     }

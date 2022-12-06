@@ -1,5 +1,5 @@
-<x-adminlte-modal wire:ignore.self id="EditCategory" title="Registrar Nueva Categoría" theme="blue-400" icon="fas fa-bolt" size='lg'>
-    <div class="alert alert-info alert-styled-left text-blue-800 content-group">
+<x-adminlte-modal wire:ignore.self id="EditCategory" title="REditar Categoría" theme="blue-400" icon="fas fa-bolt" size='lg'>
+    <div class="text-blue-800 alert alert-info alert-styled-left content-group">
         <span class="text-semibold">Estimado usuario</span>
         Los campos remarcados con <span class="text-danger"> * </span> son necesarios.
     </div>
@@ -27,12 +27,12 @@
                 Cargando...
             </div>
             <span wire:loading.remove>
-                <i class="fas fa-save mr-1"></i>
+                <i class="mr-1 fas fa-save"></i>
                 Guardar
             </span>
         </button>
         <button class="btn btn-md btn-default" data-dismiss="modal" wire:click.prevent="resetUI()">
-            <i class="fas fa-window-close mr-1"></i>
+            <i class="mr-1 fas fa-window-close"></i>
             Cerrar
         </button>
 

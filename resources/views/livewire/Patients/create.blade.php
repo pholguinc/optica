@@ -99,7 +99,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
                         </div>
-                        <input type="date" wire:model.defer="date" class="form-control @error('date') is-invalid @enderror" placeholder="Ingrese sus nombres...">
+                        <input type="date" wire:model.defer="date" class="form-control @error('date') is-invalid @enderror">
                     </div>
                     @error('date')
                     <label class="ml-3 validation-error-label">

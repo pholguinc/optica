@@ -30,14 +30,11 @@
                         </div>
                     </td>
                     <td id="actions" data-title="Acciones" width="175px" class="text-center">
-                        <a href="" class="text-white btn bg-info-400 btn-md" data-toggle="tooltip" data-placement="top" title="Ver">
-                            <i class="fas fa-clipboard"></i>
-                        </a>
 
-                        <a wire:click="" class="rounded btn bg-primary-400 btn-md" label="Open Modal" data-toggle="modal" data-target="#EditQuery">
+                        <a wire:click="Edit({{ $provider->id }})" class="rounded btn bg-primary-400 btn-md" label="Open Modal" data-toggle="modal" data-target="#EditProvider">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a wire:click="" class="text-white btn bg-danger-400 btn-md">
+                        <a wire:click="$emit('deleteProvider', {{ $provider->id }})" class="text-white btn bg-danger-400 btn-md">
                             <i class="fas fa-trash"></i>
                         </a>
                     </td>
